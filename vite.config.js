@@ -1,8 +1,8 @@
-// import { fileURLToPath, URL } from 'node:url';
 const { resolve } = require('path');
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import copy from 'rollup-plugin-copy';
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -15,6 +15,13 @@ export default defineConfig({
           includeAbsolute: false,
         },
       },
+    }),
+    //使用svg
+    createSvgIconsPlugin({
+      //指定需要緩存的圖標資料夾
+      iconDirs: [resolve(process.cwd(), 'src/assets/svg')],
+      //指定symbolId格式
+      symbolId: '[name]',
     }),
     copy({
       targets: [

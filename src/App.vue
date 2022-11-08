@@ -8,6 +8,7 @@ import HelloWorld from './components/HelloWorld.vue';
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
       <h2 class="text-red-500 text-xl">YA</h2>
+      <SvgIcon name="test"></SvgIcon>
       <img src="images/test.png" alt="">
       <nav>
         <RouterLink to="/">Home</RouterLink>
