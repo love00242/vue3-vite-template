@@ -47,6 +47,7 @@ const reset = () => {
 const saveSign = () => {
   const data = canvas.value.toDataURL("image/png"); //圖片儲存的類型選擇png
   showImg.value.src = data;
+  localStorage.setItem('img', data);
 }
 </script>
 
